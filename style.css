@@ -16,6 +16,12 @@
   height: 50%;
   width: 100%;
 }
+.canvas-down {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+}
 
 #myCanvas2 {
   height: 50%;
