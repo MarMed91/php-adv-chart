@@ -7,7 +7,6 @@
 
     foreach ($v1 as $k2 => $v2) {
       $monthSalesList[] = $v2;
-      //$line[] = $v2;
     }
   }
 

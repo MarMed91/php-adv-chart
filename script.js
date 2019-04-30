@@ -63,9 +63,9 @@ function getChartStep3() {
 
 function init() {
 
-  //getChartStep1();
+  getChartStep1();
   getChartStep2();
-  //getChartStep3();
+  getChartStep3();
 }
 
 $(document).ready(init);
