@@ -4,24 +4,19 @@
   $montSalesList = [];
   $type = [];
 
-  //foreach ($graphs["fatturato"] as  $elem) {
-
-  //   $monthSalesList[] = $elem["type"];
-  //   $type[] = $elem["type"];
-  //}
 
   foreach ($graphs["fatturato"] as  $k1 => $v1) {
 
     foreach ($v1 as $k2 => $v2) {
       $monthSalesList[] = $v2["data"];
-      $type[] = $v2["type"];
+      $line[] = $v2["type"];
     }
   }
- var_dump($type);
+ var_dump($graphs["fatturato"]);
 
  $ret = [
 
-   "type" => $type,
+   "type" => $line,
 
    "data" => [
        "labels" => ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
