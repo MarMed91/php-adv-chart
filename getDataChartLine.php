@@ -5,11 +5,9 @@ $montSalesList = [];
 
 foreach ($graphs["fatturato"] as  $v1) {
 
-  foreach ($v1 as $k2 => $v2) {
-    $monthSalesList[] = $v2;
-  }
+    $monthSalesList[] = $v1;
 }
-
+var_dump($v1);
 $ret = [
 
  "type" => "line",
@@ -27,5 +25,5 @@ $ret = [
  ]
 ];
 
-echo json_encode($ret);
+//echo json_encode($ret);
 ?>

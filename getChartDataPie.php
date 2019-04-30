@@ -7,7 +7,6 @@
 
   foreach ($graphs["fatturato_by_agent"] as $value) {
 
-
     foreach ($value as $k1 => $v1) {
 
       $salesmen[] = $k1;
