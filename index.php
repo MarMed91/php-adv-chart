@@ -15,6 +15,8 @@
   <body>
     <div class="canvas-container">
         <canvas id="myChart"></canvas>
+        <canvas id="myChart2"></canvas>
+        <canvas id="myChart3"></canvas>
     </div>
   </body>
 </html>

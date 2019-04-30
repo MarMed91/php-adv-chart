@@ -14,7 +14,6 @@
       $sales[] = $v1;
     }
   }
-  var_dump($pie);
 
   $ret2 = [
 

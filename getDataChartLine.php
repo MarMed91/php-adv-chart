@@ -3,8 +3,6 @@
 
   $montSalesList = [];
 
-
-
   foreach ($graphs["fatturato"] as  $v1) {
 
     foreach ($v1 as $k2 => $v2) {
@@ -12,7 +10,6 @@
       //$line[] = $v2;
     }
   }
-  var_dump($monthSalesList);
 
  $ret = [
 

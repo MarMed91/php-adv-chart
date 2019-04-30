@@ -39,7 +39,7 @@ function getChartStep2() {
 
       var parse = JSON.parse(data);
 
-      var ctx = document.getElementById('myChart').getContext('2d');
+      var ctx = document.getElementById('myChart2').getContext('2d');
       var chart = new Chart(ctx, parse);
    }
  });
@@ -55,7 +55,7 @@ function getChartStep3() {
 
       var parse2 = JSON.parse(data);
 
-      var ctx2 = document.getElementById('myChart').getContext('2d');
+      var ctx2 = document.getElementById('myChart3').getContext('2d');
       var chart2 = new Chart(ctx2, parse2);
    }
  });
