@@ -3,7 +3,7 @@
 
   $sales = [];
   $salesmen = [];
-  $type = [];
+  $pie = [];
 
   foreach ($graphs["fatturato_by_agent"] as $value) {
 
@@ -11,10 +11,10 @@
     foreach ($value as $k1 => $v1) {
 
       $salesmen[] = $k1;
+      var_dump($k1)
       $sales[] = $v1;
     }
   }
-var_dump($graphs["fatturato_by_agent"]);
   $ret2 = [
 
     "type" => $pie,
