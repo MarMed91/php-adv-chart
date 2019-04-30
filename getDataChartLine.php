@@ -1,31 +1,31 @@
 <?php
-  include "database2.php";
+include "database2.php";
 
-  $montSalesList = [];
+$montSalesList = [];
 
-  foreach ($graphs["fatturato"] as  $v1) {
+foreach ($graphs["fatturato"] as  $v1) {
 
-    foreach ($v1 as $k2 => $v2) {
-      $monthSalesList[] = $v2;
-    }
+  foreach ($v1 as $k2 => $v2) {
+    $monthSalesList[] = $v2;
   }
+}
 
- $ret = [
+$ret = [
 
-   "type" => "line",
+ "type" => "line",
 
-   "data" => [
-       "labels" => ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
-       "datasets" => [
-         [
-           "label" => 'Income',
-           "backgroundColor" => ['red', 'blue',  'yellow'],
-           "borderColor" => ['red', 'blue', 'yellow'],
-           "data" => $monthSalesList
-         ]
+ "data" => [
+     "labels" => ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+     "datasets" => [
+       [
+         "label" => 'Month Sales',
+         "backgroundColor" => ['red'],
+         "borderColor" => ['blue'],
+         "data" => $monthSalesList
        ]
-   ]
- ];
+     ]
+ ]
+];
 
- echo json_encode($ret);
- ?>
+echo json_encode($ret);
+?>

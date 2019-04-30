@@ -33,10 +33,10 @@ function getChartStep2() {
 
   $.ajax({
 
-    url: "getChartDataLine.php",
+    url: "getDataChartLine.php",
     method: "GET",
     success: function(data) {
-
+      
       var parse = JSON.parse(data);
 
       var ctx = document.getElementById('myChart2').getContext('2d');
