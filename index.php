@@ -13,8 +13,6 @@
     <title></title>
   </head>
   <body>
-    <h1 id="title">Employee</h1>
-    <div class="container"></div>
     <div class="canvas-container">
         <canvas id="myChart"></canvas>
     </div>
