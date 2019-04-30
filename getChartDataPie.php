@@ -3,21 +3,22 @@
 
   $sales = [];
   $salesmen = [];
-  $pie = [];
+
 
   foreach ($graphs["fatturato_by_agent"] as $value) {
 
-    $pie[] = $value["type"];
+
     foreach ($value as $k1 => $v1) {
 
       $salesmen[] = $k1;
-      var_dump($k1)
       $sales[] = $v1;
     }
   }
+  var_dump($pie);
+
   $ret2 = [
 
-    "type" => $pie,
+    "type" => "pie",
 
     "data" => [
         "labels" => $salesmen,

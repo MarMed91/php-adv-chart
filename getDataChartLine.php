@@ -2,21 +2,21 @@
   include "database2.php";
 
   $montSalesList = [];
-  $type = [];
 
 
-  foreach ($graphs["fatturato"] as  $k1 => $v1) {
+
+  foreach ($graphs["fatturato"] as  $v1) {
 
     foreach ($v1 as $k2 => $v2) {
-      $monthSalesList[] = $v2["data"];
-      $line[] = $v2["type"];
+      $monthSalesList[] = $v2;
+      //$line[] = $v2;
     }
   }
- var_dump($graphs["fatturato"]);
+  var_dump($monthSalesList);
 
  $ret = [
 
-   "type" => $line,
+   "type" => "line",
 
    "data" => [
        "labels" => ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
