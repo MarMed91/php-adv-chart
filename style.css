@@ -5,9 +5,8 @@
 }
 
 .canvas-container {
-
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 600px;
 
   margin: auto;
 }
@@ -16,21 +15,29 @@
   height: 50%;
   width: 100%;
 }
+.chartjs-size-monitor {
+  width: 300px;
+text-transform:
+
+}
 .canvas-down {
   height: 50%;
-  width: 100%;
+
+
+ margin-top: 50px;
+text-transform: 
   display: flex;
-  margin-top: 50px;
   justify-content: space-between;
   align-items: center;
 }
-
-#myCanvas2 {
-  height: 50%;
-  width: 50%;
+.canvas-down *{
+width: 300px;
 }
 
-#myCanvas3 {
-  height: 50%;
-  width: 50%;
+.canvas-down > canvas#myCanvas2 {
+  width: 300px;
+}
+
+.canvas-down > canvas#myCanvas3 {
+width: 300px;
 }
