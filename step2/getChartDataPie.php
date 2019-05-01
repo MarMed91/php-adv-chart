@@ -9,9 +9,10 @@
 
     foreach ($value as $k1 => $v1) {
 
-      $salesmen[] = $k1;
-      $sales[] = $v1;
+  $salesmen[] = $k1;
+  $sales[] = $v1;
     }
+    var_dump($sales);
   }
 
   $ret2 = [
@@ -31,6 +32,6 @@
     ]
   ];
 
-  echo json_encode($ret2);
+  //echo json_encode($ret2);
 
  ?>

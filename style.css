@@ -20,24 +20,24 @@
 text-transform:
 
 }
-.canvas-down {
+.canvas-mild{
   height: 50%;
 
 
  margin-top: 50px;
-text-transform: 
+text-transform:
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.canvas-down *{
+.canvas-mild *{
 width: 300px;
 }
 
-.canvas-down > canvas#myCanvas2 {
+.canvas-mild > canvas#myCanvas2 {
   width: 300px;
 }
 
-.canvas-down > canvas#myCanvas3 {
+.canvas-mild > canvas#myCanvas3 {
 width: 300px;
 }

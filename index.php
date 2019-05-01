@@ -15,9 +15,14 @@
   <body>
     <div class="canvas-container">
         <canvas id="myChart"></canvas>
-        <div class="canvas-down">
+        <div class="canvas-mild">
           <canvas id="myChart2"></canvas>
           <canvas id="myChart3"></canvas>
+        </div>
+        <div class="canvas-down">
+          <canvas id="myChart4"></canvas>
+          <canvas id="myChart5"></canvas>
+          <canvas id="myChart6"></canvas>
         </div>
     </div>
   </body>
