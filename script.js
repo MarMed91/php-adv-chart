@@ -63,6 +63,7 @@ function getChartStep2a() {
           }]
       }
    })
+ }
   });
 }
 
@@ -101,8 +102,7 @@ function getChartStep2b() {
  });
 }
 
-
-function getChartStep3a() {
+function getChartStep3() {
 
  var level = getLevel();
 
@@ -144,20 +144,20 @@ function getChartStep3a() {
       var ctx = document.getElementById('myChart3b').getContext('2d');
       var chart = new Chart(ctx, {
         // The type of chart we want to create
-      type: fatturato_by_agent["type"],
+        type: fatturato_by_agent["type"],
 
-      // The data for our dataset
-      data: {
-          labels: keys,
-          datasets: [{
-              label: 'Month Sales',
-              backgroundColor: ['green'],
-              borderColor:  ['red'],
-              data: values
+        // The data for our dataset
+        data: {
+            labels: keys,
+            datasets: [{
+                label: 'Month Sales',
+                backgroundColor: ['green'],
+                borderColor:  ['red'],
+                data: values
             }]
-          }
-       })
-     });
+        }
+      });
+      }
 
       if (level == "clevel") {
 
@@ -167,56 +167,20 @@ function getChartStep3a() {
       var ctx = document.getElementById('myChart3c').getContext('2d');
       var chart = new Chart(ctx, {
         // The type of chart we want to create
-      type: team_efficiency["type"],
+        type: team_efficiency["type"],
 
-      // The data for our dataset
-      data: {
-          labels: keysT,
-          datasets: [{
-              label: 'Month Sales',
-              backgroundColor: ['green'],
-              borderColor:  ['red'],
-              data: valuesT
+        // The data for our dataset
+        data: {
+            labels: keysT,
+            datasets: [{
+                label: 'Month Sales',
+                backgroundColor: ['green'],
+                borderColor:  ['red'],
+                data: valuesT
             }]
-          }
+         }
        })
-     });
-    }
-  }
-});
-}
-
-
-function getChartStep3b() {
-
-  $ajax({
-
-    url: "getChartData2.php",
-    data: { level: employee },
-    method: "GET",
-    success: function(data) {
-
-      var parse4 = JSON.parse(data);
-
-      var ctx4 = document.getElementById('myChart5').getContext('2d');
-      var chart4 = new Chart(ctx4, parse4);
-    }
-  });
-}
-
-function getChartStep3c() {
-
-  $.ajax({
-
-  url: "getChartData2.php",
-  data: { level: clevel },
-  method: "GET",
-  success: function(data) {
-
-    var parse5 = JSON.parse(data);
-
-    var ctx5 = document.getElementById('myChart6').getContext('2d');
-    var chart5 = new Chart(ctx5, parse5);
+     }
   }
 });
 }
@@ -226,9 +190,8 @@ function init() {
   getChartStep1();
   getChartStep2a();
   getChartStep2b();
-  getChartStep3a();
-  //getChartStep3b();
-  //getChartStep3c();
+  getChartStep3();
+
 }
 
 $(document).ready(init);
