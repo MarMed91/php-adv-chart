@@ -16,13 +16,13 @@
     <div class="canvas-container">
         <canvas id="myChart"></canvas>
         <div class="canvas-mild">
-          <canvas id="myChart2"></canvas>
-          <canvas id="myChart3"></canvas>
+          <canvas id="myChart2a"></canvas>
+          <canvas id="myChart2b"></canvas>
         </div>
         <div class="canvas-down">
-          <canvas id="myChart4"></canvas>
-          <canvas id="myChart5"></canvas>
-          <canvas id="myChart6"></canvas>
+          <canvas id="myChart3a"></canvas>
+          <canvas id="myChart3b"></canvas>
+          <canvas id="myChart3c"></canvas>
         </div>
     </div>
   </body>

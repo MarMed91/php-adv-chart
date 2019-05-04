@@ -1,3 +1,9 @@
+function getLevel() {
+
+    var urlParams = new UrlSearchParams(window.location.search);
+    return urlParams.get("level");
+}
+
 function getChartStep1() {
 
   $.ajax({
@@ -29,56 +35,159 @@ function getChartStep1() {
   });
 }
 
-function getChartStep2() {
+function getChartStep2a() {
 
   $.ajax({
 
-    url: "getDataChartLine.php",
+    url: "getDataChart.php",
     method: "GET",
     success: function(data) {
 
       var parse = JSON.parse(data);
 
-      var ctx = document.getElementById('myChart2').getContext('2d');
-      var chart = new Chart(ctx, parse);
-   }
- });
+      var fatturato = parse["fatturato"];
+
+      var ctx = document.getElementById('myChart2a').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+      type: fatturato["type"],
+
+      // The data for our dataset
+      data: {
+          labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+          datasets: [{
+              label: 'Month Sales',
+              backgroundColor: ['green'],
+              borderColor:  ['red'],
+              data: fatturato["data"]
+          }]
+      }
+   })
+  });
 }
 
-function getChartStep3() {
+function getChartStep2b() {
 
   $.ajax({
 
-    url: "getChartDataPie.php",
+    url: "getChartData.php",
     method: "GET",
     success: function(data) {
 
-      var parse2 = JSON.parse(data);
+      var parse = JSON.parse(data);
 
-      var ctx2 = document.getElementById('myChart3').getContext('2d');
-      var chart2 = new Chart(ctx2, parse2);
-   }
+      var fatturato_by_agent = parse["fatturato_by_agent"];
+
+      var keys = Object.keys(fatturato_by_agent["data"]);
+      var values = Object.values(fatturato_by_agent["data"]);
+
+      var ctx = document.getElementById('myChart2b').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: fatturato_by_agent["type"],
+
+        // The data for our dataset
+        data: {
+          labels: keys,
+          datasets: [{
+              label: 'Month Sales',
+              backgroundColor: ['green'],
+              borderColor:  ['red'],
+              data: values
+          }]
+      }
+    })
+    }
  });
 }
 
-function getChartStep4() {
+
+function getChartStep3a() {
+
+ var level = getLevel();
 
  $ajax({
 
    url: "getChartData1.php",
-   data: { level: guest },
    method: "GET",
    success: function(data) {
 
-     var parse3 = JSON.parse(data);
+     var parse = JSON.parse(data);
 
-     var ctx3 = document.getElementById('myChart4').getContext('2d');
-     var chart3 = new Chart(ctx3, parse3);
-   }
- });
+     var fatturato = parse["fatturato"];
+
+     var fatturato_by_agent = parse["fatturato_by_agent"];
+     var team_efficiency = parse["team_efficiency"];
+
+     var ctx = document.getElementById('myChart3a').getContext('2d');
+     var chart = new Chart(ctx, {
+       // The type of chart we want to create
+       type: fatturato["type"],
+
+       // The data for our dataset
+       data: {
+         labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+         datasets: [{
+           label: 'Month Sales',
+           backgroundColor: ['green'],
+           borderColor:  ['red'],
+           data: fatturato["data"]
+         }]
+       }
+     });
+
+      if (level == "employee" || level == "clevel") {
+
+      var keys = Object.keys(fatturato_by_agent["data"]);
+      var values = Object.values(fatturato_by_agent["data"]);
+
+      var ctx = document.getElementById('myChart3b').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+      type: fatturato_by_agent["type"],
+
+      // The data for our dataset
+      data: {
+          labels: keys,
+          datasets: [{
+              label: 'Month Sales',
+              backgroundColor: ['green'],
+              borderColor:  ['red'],
+              data: values
+            }]
+          }
+       })
+     });
+
+      if (level == "clevel") {
+
+      var keysT = Object.keys(team_efficiency["data"]);
+      var valuesT = Object.values(team_efficiency["data"]);
+
+      var ctx = document.getElementById('myChart3c').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+      type: team_efficiency["type"],
+
+      // The data for our dataset
+      data: {
+          labels: keysT,
+          datasets: [{
+              label: 'Month Sales',
+              backgroundColor: ['green'],
+              borderColor:  ['red'],
+              data: valuesT
+            }]
+          }
+       })
+     });
+    }
+  }
+});
 }
 
-function getChartStep5() {
+
+function getChartStep3b() {
 
   $ajax({
 
@@ -95,7 +204,7 @@ function getChartStep5() {
   });
 }
 
-function getChartStep6() {
+function getChartStep3c() {
 
   $.ajax({
 
@@ -115,11 +224,11 @@ function getChartStep6() {
 function init() {
 
   getChartStep1();
-  getChartStep2();
-  getChartStep3();
-  getChartStep4();
-  getChartStep5();
-  getChartStep6();
+  getChartStep2a();
+  getChartStep2b();
+  getChartStep3a();
+  //getChartStep3b();
+  //getChartStep3c();
 }
 
 $(document).ready(init);
