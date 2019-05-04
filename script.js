@@ -161,8 +161,9 @@ function getChartStep3() {
 
       if (level == "clevel") {
 
-      var keysT = Object.keys(team_efficiency["data"]);
-      var valuesT = Object.values(team_efficiency["data"]);
+      var team1 = team_efficiency["data"]["team1"];
+      var team2 = team_efficiency["data"]["team2"];
+      var team3 = team_efficiency["data"]["team3"];
 
       var ctx = document.getElementById('myChart3c').getContext('2d');
       var chart = new Chart(ctx, {
@@ -171,12 +172,24 @@ function getChartStep3() {
 
         // The data for our dataset
         data: {
-            labels: keysT,
+            labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
             datasets: [{
-                label: 'Month Sales',
+                label: 'Team1',
                 backgroundColor: ['green'],
                 borderColor:  ['red'],
-                data: valuesT
+                data: team1
+            },
+            {
+                label: 'Team2',
+                backgroundColor: ['green'],
+                borderColor:  ['red'],
+                data: team2
+            },
+            {
+                label: 'Team3',
+                backgroundColor: ['green'],
+                borderColor:  ['red'],
+                data: team3
             }]
          }
        })
