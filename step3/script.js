@@ -91,7 +91,6 @@ function getChartStep3() {
 }
 
 function init() {
-
   getChartStep3();
 }
 
